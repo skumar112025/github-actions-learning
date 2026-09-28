@@ -1,4 +1,4 @@
-name: GitHub Actions Basics
+name: Multiple Jobs Demo
 
 on:
   push:
@@ -6,23 +6,24 @@ on:
       - main
 
 jobs:
-  basics:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Build step
+        run: echo "Building the application..."
 
-      - name: Show Git version
-        run: git --version
+      - name: Show build message
+        run: echo "Build completed successfully"
 
-      - name: Show current directory
-        run: pwd
+  test:
+    runs-on: ubuntu-latest
 
-      - name: List files
-        run: ls -la
+    steps:
+      - name: Test step
+        run: echo "Running tests..."
 
-      - name: Show runner operating system
-        run: uname -a
+      - name: Show test message
+        run: echo "Tests completed successfully"
 
   

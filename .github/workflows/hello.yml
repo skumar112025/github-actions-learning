@@ -1,4 +1,4 @@
-name: Hello GitHub Actions
+name: GitHub Actions Basics
 
 on:
   push:
@@ -6,17 +6,23 @@ on:
       - main
 
 jobs:
-  hello:
+  basics:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions!"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Say current directory
+      - name: Show Git version
+        run: git --version
+
+      - name: Show current directory
         run: pwd
 
       - name: List files
         run: ls -la
+
+      - name: Show runner operating system
+        run: uname -a
 
   

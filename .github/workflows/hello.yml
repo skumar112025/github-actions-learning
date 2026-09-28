@@ -1,30 +1,24 @@
-name: Job Dependencies Demo
+name: Environment Variable Demo
 
 on:
   push:
     branches:
       - main
+env:
+  APP_NAME: my-demo-app
+  ENVIRONMENT: dev
 
 jobs:
-  build:
+  show-variables:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build step
-        run: echo "Building the application..."
+      - name: Show application name
+        run: echo "Application: $APP_NAME"
 
-      - name: Show build message
-        run: echo "Build completed successfully"
+      - name: Show environment
+        run: echo "Environment: $ENVIRONMENT"
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Test step
-        run: echo "Running tests..."
-
-      - name: Show test message
-        run: echo "Tests completed successfully"
-
+      - name: Show both
+        run: echo "Deploying $APP_NAME to $ENVIRONMENT"
   

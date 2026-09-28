@@ -1,4 +1,4 @@
-name: Multiple Jobs Demo
+name: Job Dependencies Demo
 
 on:
   push:
@@ -17,6 +17,7 @@ jobs:
         run: echo "Build completed successfully"
 
   test:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:

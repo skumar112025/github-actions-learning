@@ -13,7 +13,7 @@ jobs:
           - name: Development
             env: 
                 ENVIRONMENT: dev
-            run: echo "Environment is $ENVIORNMENT"
+            run: echo "Environment is $ENVIRONMENT"
 
           - name: Production
             env:

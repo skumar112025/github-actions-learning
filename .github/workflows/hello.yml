@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Show application name
-        run: echo "Application: $APP_NAME"
+        run: echo "Application:$APP_NAME"
 
       - name: Show environment
-        run: echo "Environment: $ENVIRONMENT"
+        run: echo "Environment:$ENVIRONMENT"
 
       - name: Show both
         run: echo "Deploying $APP_NAME to $ENVIRONMENT"

@@ -28,15 +28,19 @@ jobs:
             - name: Show repository
               run: |
                 echo "Repository: ${{ github.repository }}"
+                echo "Repository: $GITHUB_REPOSITORY"
 
             - name: Show branch
               run: |
                 echo "Branch: ${{ github.ref_name }}"
+                echo "Branch: $GITHUB_REF_NAME"
 
             - name: show commit
               run: |
                 echo "Commit: ${{ github.sha }}"
+                echo "Commit: $GITHUB_SHA"
 
             - name: show actor
               run: |
                 echo "Actor: ${{ github.actor }}"
+                echo "Actor: $GITHUB_ACTOR"

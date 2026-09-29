@@ -1,0 +1,38 @@
+name: Variables Lab
+
+on:
+    push:
+        branches:
+            - main
+
+env:
+    APPLICATION: github-action-learning
+
+jobs:
+
+    information:
+        runs-on: ubuntu-latest
+
+        env:
+            ENVIRONMENT: learning
+        
+        steps:
+            - name: Show application
+              run: |
+                echo "Application: $APPLICATION"
+
+            - name: Show environment
+              run: |
+                echo "Environment: $ENVIRONMENT"
+            
+            - name: Show repository
+              run: |
+                echo "Repository: {{ github.repository }}"
+
+            - name: Show branch
+              run: |
+                echo "Branch: {{ github.ref_name }}"
+
+            - name: show commit
+              run: |
+                echo "Commit: {{ github.sha }}"

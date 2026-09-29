@@ -1,0 +1,21 @@
+name: Step Level Variable Demo
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    step-variables:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Development
+            env: 
+                ENVIRONMENT: dev
+            run: echo "Environment is $ENVIORNMENT"
+
+          - name: Production
+            env:
+                ENVIRONMENT: prod
+            run: echo "Environment is $ENVIRONMENT"

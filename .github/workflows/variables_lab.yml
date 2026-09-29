@@ -19,20 +19,24 @@ jobs:
         steps:
             - name: Show application
               run: |
-                echo "Application: $APPLICATION"
+                echo "Application: ${{ env.APPLICATION }}"
 
             - name: Show environment
               run: |
-                echo "Environment: $ENVIRONMENT"
+                echo "Environment: ${{ env.ENVIRONMENT }}"
             
             - name: Show repository
               run: |
-                echo "Repository: {{ github.repository }}"
+                echo "Repository: ${{ github.repository }}"
 
             - name: Show branch
               run: |
-                echo "Branch: {{ github.ref_name }}"
+                echo "Branch: ${{ github.ref_name }}"
 
             - name: show commit
               run: |
-                echo "Commit: {{ github.sha }}"
+                echo "Commit: ${{ github.sha }}"
+
+            - name: show actor
+              run: |
+                echo "Actor: ${{ github.actor }}"

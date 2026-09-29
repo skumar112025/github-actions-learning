@@ -1,0 +1,30 @@
+name: Environment Variable Demo
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_NAME: my_demo_app
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: dev
+
+    steps:
+      - name: Show environment
+        run: echo "Deploying $APP_NAME to $ENVIRONMENT"
+
+  qa:
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: qa
+
+    steps:
+      - name: Show environment
+        run: echo "Deploying $APP_NAME to $ENVIRONMENT"
